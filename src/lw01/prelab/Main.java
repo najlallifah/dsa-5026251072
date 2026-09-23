@@ -1,10 +1,12 @@
 package lw01.prelab;
 
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,12 +18,26 @@ public class Main {
                 String id = scanner.next();
                 int pages = scanner.nextInt();
 
+                //PrintJob job;
+
                 if (type.equals("MONO")) {
                     jobs.add(new MonoPrint(id, pages));
                 } else if (type.equals("COLOUR")) {
                     jobs.add(new ColourPrint(id, pages));
                 }
             }
+
+            //jobs.add(job);
+
+       // }
+
+        //scanner.close();
+
+        //for (PrintJob job : jobs) {
+            //System.out.println(job.summary());
+        //}
+
+
         } catch (FileNotFoundException e) {
             System.err.println("jobs.txt not found");
             return;
