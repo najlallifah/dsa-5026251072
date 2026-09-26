@@ -22,10 +22,7 @@ public class ColourPrint extends PrintJob {
             //printingCost = pages * 1500;
 
         //}else 
-        )
-
-
-
+        //)
 
     @Override
     public String label() {
