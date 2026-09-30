@@ -1,9 +1,9 @@
 package lw01.unguided;
 
-public class CarWash extends WashService{
+public class CarWash extends WashService {
 
-    public CarWash(String id, int days) {
-        super(id, days);
+    public CarWash(String id, int days, int units) {
+        super(id, days, units);
     }
 
     @Override
@@ -11,6 +11,7 @@ public class CarWash extends WashService{
         int days = getDays();
         int firstDays = Math.min(days, 3);
         int extraDays = Math.max(days - 3, 0);
+
         return (firstDays * 35000) + (extraDays * 25000) + 15000;
     }
 
@@ -19,4 +20,3 @@ public class CarWash extends WashService{
         return "Car";
     }
 }
-

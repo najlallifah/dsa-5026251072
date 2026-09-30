@@ -12,7 +12,7 @@ public class Main {
         LinkedList<String[]> transactions = new LinkedList<>();
         LinkedList<String[]> customers = new LinkedList<>();
 
-        try (Scanner scanner = new Scanner(new File("transactions.txt"))) {
+        try (Scanner scanner = new Scanner(new File("src/lw02/prelab/transactions.txt"))) {
             while (scanner.hasNext()) {
                 String name = scanner.next();
                 String type = scanner.next();
@@ -63,7 +63,6 @@ public class Main {
             System.out.println(c[0] + " : " + c[1]);
         }
 
-        System.out.println();
         System.out.println("=== Failed Transactions ===");
         while (!failedStack.isEmpty()) {
             String[] failed = failedStack.pop();
@@ -89,3 +88,13 @@ public class Main {
         return null;
     }
 }
+
+
+//Scanner scanner = new Scanner{
+    //Main.class.getResourceAsStream("transactions.txt");
+//}
+
+// if (customer == null){
+//     customer = new String[] {name, "0"};
+
+// }

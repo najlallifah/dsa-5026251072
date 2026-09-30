@@ -3,13 +3,20 @@ package lw01.unguided;
 public abstract class WashService implements Billable {
     private final String id;
     private final int days;
+    private final int units;
 
-    protected WashService(String id, int days) {
+    protected WashService(String id, int days, int units) {
         if (days <= 0) {
             throw new IllegalArgumentException("Days must be a positive number");
         }
+
+        if (units <= 0) {
+            throw new IllegalArgumentException("Units must be a positive number");
+        }
+
         this.id = id;
         this.days = days;
+        this.units = units;
     }
 
     public String getId() {
@@ -20,6 +27,10 @@ public abstract class WashService implements Billable {
         return days;
     }
 
+    public int getUnits() {
+        return units;
+    }
+
     @Override
     public abstract int calculateCharge();
 
@@ -27,6 +38,7 @@ public abstract class WashService implements Billable {
         if (units <= 0) {
             throw new IllegalArgumentException("Units must be a positive number");
         }
+
         return units * calculateCharge();
     }
 
@@ -35,7 +47,6 @@ public abstract class WashService implements Billable {
     }
 
     public String summary() {
-        return id + " | " + label() + " | " + calculateCharge();
+        return id + " | " + label() + " | " + calculateCharge(units);
     }
 }
-
